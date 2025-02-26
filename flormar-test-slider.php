@@ -7,11 +7,11 @@ Author: Alex Stoian
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+    exit; 
 }
 
 /**
- * Підключення стилів та скриптів
+ * Підключення стилів та скриптів для слайдера
  */
 function flormar_enqueue_slider_assets() {
     wp_enqueue_style( 'slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.8.1' );
@@ -19,12 +19,13 @@ function flormar_enqueue_slider_assets() {
     wp_enqueue_style( 'flormar-slider-css', plugins_url( 'css/style.css', __FILE__ ), array('slick-css'), '1.0' );
 
     wp_enqueue_script( 'slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '1.8.1', true );
-    wp_enqueue_script( 'flormar-slider-init', plugins_url( 'js/slider-init.js', __FILE__ ), array('jquery', 'slick-js'), '1.0', true );
+    wp_enqueue_script( 'flormar-slider-init', plugins_url( 'js/slider-init.js', __FILE__ ), array('jquery','slick-js'), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'flormar_enqueue_slider_assets' );
 
 /**
- * Реєстрація шорткоду [flormar-test-slider] з фільтрацією товарів за ціною
+ * Шорткод [flormar-test-slider]
+ * Параметри: min-price, max-price (необов'язкові)
  */
 function flormar_test_slider_shortcode( $atts ) {
     $atts = shortcode_atts( array(

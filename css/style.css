@@ -1,8 +1,9 @@
 .flormar-slider-wrapper {
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0 auto;
     background-color: #fde8eb;
     padding: 50px 0;
-    text-align: center;
 }
 
 .flormar-slider-title {
@@ -11,8 +12,54 @@
     text-align: center;
 }
 
-.flormar-slider {
+.flormar-slide {
+    border-radius: 4px;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    margin: 0 10px;
+    text-align: center;
+    position: relative;
+}
+
+.flormar-slide img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.flormar-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px auto;
+}
+
+.slick-arrow {
+    background: #3D3D3D;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .flormar-slider-wrapper {
+        padding: 30px 20px;
+    }
+    
+    .flormar-slider .slick-slide {
+        width: 50%;
+        margin: 0 5px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none !important;
+    }
 }

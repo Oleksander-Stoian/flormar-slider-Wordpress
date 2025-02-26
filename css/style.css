@@ -1,0 +1,18 @@
+.flormar-slider-wrapper {
+    width: 100%;
+    background-color: #fde8eb;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.flormar-slider-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.flormar-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
